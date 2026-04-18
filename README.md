@@ -1,10 +1,24 @@
 # Kecerdasan Komputasional
 
-Repositori ini berisi kumpulan tugas mata kuliah **Kecerdasan Komputasional** yang mencakup implementasi algoritma K-Means Clustering dan Algoritma Genetika untuk penyelesaian masalah Travelling Salesman Problem (TSP).
+Repositori ini berisi kumpulan tugas mata kuliah **Kecerdasan Komputasional**. Repositori ini bersifat **berkelanjutan** — folder dan file baru akan terus ditambahkan seiring dengan pengerjaan tugas-tugas berikutnya selama perkuliahan berlangsung.
+
+> 📌 **Catatan:** README ini akan diperbarui setiap kali ada tugas baru yang ditambahkan ke repositori.
+
+---
+
+## 📋 Daftar Tugas
+
+| No | Folder | Topik | Status |
+|----|--------|-------|--------|
+| 1 | [`Kmeans/`](#-folder-kmeans) | K-Means Clustering | ✅ Selesai |
+| 2 | [`TugasAlgoritmaGenetika/`](#-folder-tugasalgoritmagenetika) | Algoritma Genetika — TSP | ✅ Selesai |
+| ... | *(akan ditambahkan)* | *(tugas selanjutnya)* | 🔄 Akan Datang |
 
 ---
 
 ## 📁 Struktur Repositori
+
+> Struktur di bawah ini mencerminkan kondisi repositori saat ini dan akan terus berkembang.
 
 ```
 Kecerdasan-Komputasional/
@@ -23,16 +37,18 @@ Kecerdasan-Komputasional/
 │   ├── Laporan_Perhitungan_Manual.md
 │   └── Panduan_Orange.md
 │
-└── TugasAlgoritmaGenetika/
-    ├── code/
-    │   ├── tsp_ga.py
-    │   ├── plot_route.py
-    │   └── generate_latex.py
-    ├── media/
-    │   └── best_route.png
-    ├── perhitungan_manual.txt
-    ├── report.tex
-    └── Tugas_KecerdasanKomputasional_Kelompok6_GA_TSP.pdf
+├── TugasAlgoritmaGenetika/
+│   ├── code/
+│   │   ├── tsp_ga.py
+│   │   ├── plot_route.py
+│   │   └── generate_latex.py
+│   ├── media/
+│   │   └── best_route.png
+│   ├── perhitungan_manual.txt
+│   ├── report.tex
+│   └── Tugas_KecerdasanKomputasional_Kelompok6_GA_TSP.pdf
+│
+└── (folder tugas berikutnya akan ditambahkan di sini...)
 ```
 
 ---
@@ -130,6 +146,8 @@ Laporan tugas akhir dalam format PDF (hasil kompilasi dari `report.tex`) milik *
 
 ## 🛠️ Teknologi yang Digunakan
 
+> Teknologi yang digunakan dapat bertambah seiring tugas-tugas baru.
+
 - **Python 3** — bahasa pemrograman utama
 - **NumPy** — komputasi numerik
 - **Pandas** — manipulasi dan analisis data
@@ -140,7 +158,7 @@ Laporan tugas akhir dalam format PDF (hasil kompilasi dari `report.tex`) milik *
 
 ## ▶️ Cara Menjalankan
 
-### K-Means (dari folder `Kmeans/`)
+### Tugas 1 — K-Means (dari folder `Kmeans/`)
 ```bash
 # Menggunakan library Scikit-Learn
 python kmeans_library.py
@@ -149,7 +167,7 @@ python kmeans_library.py
 python kmeans_scratch.py
 ```
 
-### Algoritma Genetika TSP (dari folder `TugasAlgoritmaGenetika/code/`)
+### Tugas 2 — Algoritma Genetika TSP (dari folder `TugasAlgoritmaGenetika/code/`)
 ```bash
 # Jalankan algoritma genetika
 python tsp_ga.py
@@ -157,3 +175,5 @@ python tsp_ga.py
 # Visualisasikan rute terbaik
 python plot_route.py
 ```
+
+> Instruksi untuk tugas-tugas berikutnya akan ditambahkan di sini seiring perkembangan repositori.
