@@ -8,7 +8,7 @@ Berikut adalah langkah-langkah untuk melakukan _clustering_ K-Means dan menemuka
    - Buka aplikasi **Orange Data Mining**.
    - Dari menu widget sebelah kiri (kategori **Data**), tarik widget **CSV File Import** atau **File** ke dalam kanvas.
    - Klik ganda (double-click) pada widget tersebut.
-   - Pilih file `data_kmeans.csv` (pastikan tipe data untuk `Annual_Income` dan `Spending_Score` terdeteksi sebagai _Numeric_).
+   - Pilih file `dataset/data_kmeans.csv` (pastikan tipe data untuk `Annual_Income` dan `Spending_Score` terdeteksi sebagai _Numeric_).
 
 2. **Memvisualisasikan Data Awal**
    - Tarik widget **Scatter Plot** dari kategori **Visualize**.

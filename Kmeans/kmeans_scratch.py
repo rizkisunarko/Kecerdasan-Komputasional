@@ -6,7 +6,7 @@ def euc_distance(p1, p2):
     return np.sqrt(np.sum((p1 - p2) ** 2))
 
 # 1. Load Data
-df = pd.read_csv('data_kmeans.csv')
+df = pd.read_csv('dataset/data_kmeans.csv')
 X = df.values
 
 # 2. Inisiasi Parameter K-Means
@@ -83,7 +83,7 @@ with open("Laporan_Perhitungan_Manual.md", "w") as f:
             break
 
 df['Kluster_Scratch'] = labels
-df.to_csv('hasil_kmeans_scratch.csv', index=False)
+df.to_csv('dataset/hasil_kmeans_scratch.csv', index=False)
 print("Klastering Scratch Berhasil. Konvergen pada iterasi ke-", iteration + 1)
 print("Manual Trace untuk Iterasi 1 telah ditulis ke 'Laporan_Perhitungan_Manual.md'.")
 
@@ -98,5 +98,5 @@ plt.xlabel('Annual Income (k$)')
 plt.ylabel('Spending Score (1-100)')
 plt.legend()
 plt.grid(True)
-plt.savefig('hasil_clustering_scratch.png')
-print("Grafik klastering scratch disimpan sebagai 'hasil_clustering_scratch.png'.")
+plt.savefig('image/hasil_clustering_scratch.png')
+print("Grafik klastering scratch disimpan sebagai 'image/hasil_clustering_scratch.png'.")

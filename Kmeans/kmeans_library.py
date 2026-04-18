@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 # 1. Load Data
-df = pd.read_csv('data_kmeans.csv')
+df = pd.read_csv('dataset/data_kmeans.csv')
 X = df.values
 
 # 2. Elbow Method untuk menentukan K optimal
@@ -22,8 +22,8 @@ plt.xlabel('Jumlah Kluster (K)')
 plt.ylabel('WCSS (Penjumlahan Kuadrat Jarak)')
 plt.xticks(K_range)
 plt.grid(True)
-plt.savefig('elbow_method_library.png')
-print("Grafik metode Elbow telah disimpan sebagai 'elbow_method_library.png'.")
+plt.savefig('image/elbow_method_library.png')
+print("Grafik metode Elbow telah disimpan sebagai 'image/elbow_method_library.png'.")
 
 # Dari grafik Elbow, didapatkan bahwa patahan (elbow) signifikan ada di K=3.
 print("\nBerdasarkan Metode Elbow, kita pilih K = 3.")
@@ -38,7 +38,7 @@ centroids = kmeans_optimal.cluster_centers_
 df['Kluster'] = labels
 print("\nHasil Klastering Pustaka/Library (5 data pertama):")
 print(df.head())
-df.to_csv('hasil_kmeans_library.csv', index=False)
+df.to_csv('dataset/hasil_kmeans_library.csv', index=False)
 
 # Visualisasi Hasil
 plt.figure(figsize=(8, 5))
@@ -51,5 +51,5 @@ plt.xlabel('Annual Income (k$)')
 plt.ylabel('Spending Score (1-100)')
 plt.legend()
 plt.grid(True)
-plt.savefig('hasil_clustering_library.png')
-print("\nVisualisasi klastering telah disimpan sebagai 'hasil_clustering_library.png'.")
+plt.savefig('image/hasil_clustering_library.png')
+print("\nVisualisasi klastering telah disimpan sebagai 'image/hasil_clustering_library.png'.")
