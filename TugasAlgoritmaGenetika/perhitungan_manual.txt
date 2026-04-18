@@ -1,0 +1,164 @@
+=== ITERASI 1 ===
+1. Evaluasi Fitness:
+Kromosom 1: [8, 13, 7, 6, 14, 12, 5, 2, 9, 3, 4, 11, 0, 1, 10] | Jarak: 243.38 | Fitness: 0.004109
+Kromosom 2: [2, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 0] | Jarak: 237.92 | Fitness: 0.004203
+Kromosom 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 4: [12, 8, 6, 2, 10, 11, 3, 14, 7, 0, 4, 9, 13, 5, 1] | Jarak: 270.74 | Fitness: 0.003694
+
+2. Rank Selection:
+Rank 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.40 | CumProb: 0.40
+Rank 3: [2, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 0] | Prob: 0.30 | CumProb: 0.70
+Rank 2: [8, 13, 7, 6, 14, 12, 5, 2, 9, 3, 4, 11, 0, 1, 10] | Prob: 0.20 | CumProb: 0.90
+Rank 1: [12, 8, 6, 2, 10, 11, 3, 14, 7, 0, 4, 9, 13, 5, 1] | Prob: 0.10 | CumProb: 1.00
+Terpilih sebagai Parent 1: [2, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 0]
+Terpilih sebagai Parent 2: [8, 13, 7, 6, 14, 12, 5, 2, 9, 3, 4, 11, 0, 1, 10]
+
+3. Crossover (Order Crossover / OX) (prob = 0.8):
+** Elitism (Kromosom Terbaik diteruskan): [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.05
+  Crosover pada titik 3 s/d 12
+  Anak dihasilkan: [2, 9, 0, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 12]
+Random value for crossover (r_cross): 0.29
+  Crosover pada titik 1 s/d 13
+  Anak dihasilkan: [0, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 2]
+Random value for crossover (r_cross): 0.23
+  Crosover pada titik 1 s/d 6
+  Anak dihasilkan: [14, 12, 9, 7, 4, 6, 5, 2, 3, 11, 0, 1, 10, 8, 13]
+
+4. Mutation (Inversion Mutation) (prob = 0.2):
+Kromosom baru 2: Random r_mut = 0.28
+Kromosom baru 3: Random r_mut = 0.64
+Kromosom baru 4: Random r_mut = 0.36
+
+=== ITERASI 2 ===
+1. Evaluasi Fitness:
+Kromosom 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 2: [2, 9, 0, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 12] | Jarak: 252.34 | Fitness: 0.003963
+Kromosom 3: [0, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 2] | Jarak: 242.08 | Fitness: 0.004131
+Kromosom 4: [14, 12, 9, 7, 4, 6, 5, 2, 3, 11, 0, 1, 10, 8, 13] | Jarak: 212.75 | Fitness: 0.004700
+
+2. Rank Selection:
+Rank 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.40 | CumProb: 0.40
+Rank 3: [14, 12, 9, 7, 4, 6, 5, 2, 3, 11, 0, 1, 10, 8, 13] | Prob: 0.30 | CumProb: 0.70
+Rank 2: [0, 12, 9, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 2] | Prob: 0.20 | CumProb: 0.90
+Rank 1: [2, 9, 0, 7, 4, 6, 5, 10, 13, 8, 11, 3, 1, 14, 12] | Prob: 0.10 | CumProb: 1.00
+Terpilih sebagai Parent 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Terpilih sebagai Parent 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+3. Crossover (Order Crossover / OX) (prob = 0.8):
+** Elitism (Kromosom Terbaik diteruskan): [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.27
+  Crosover pada titik 10 s/d 14
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.65
+  Crosover pada titik 9 s/d 10
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.17
+  Crosover pada titik 3 s/d 11
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+4. Mutation (Inversion Mutation) (prob = 0.2):
+Kromosom baru 2: Random r_mut = 0.16
+  Mutasi pada titik 4 s/d 6
+  Hasil mutasi: [7, 8, 3, 11, 1, 14, 10, 13, 5, 6, 2, 0, 12, 4, 9]
+Kromosom baru 3: Random r_mut = 0.99
+Kromosom baru 4: Random r_mut = 0.64
+
+=== ITERASI 3 ===
+1. Evaluasi Fitness:
+Kromosom 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 2: [7, 8, 3, 11, 1, 14, 10, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 227.36 | Fitness: 0.004398
+Kromosom 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+
+2. Rank Selection:
+Rank 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.40 | CumProb: 0.40
+Rank 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.30 | CumProb: 0.70
+Rank 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.20 | CumProb: 0.90
+Rank 1: [7, 8, 3, 11, 1, 14, 10, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.10 | CumProb: 1.00
+Terpilih sebagai Parent 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Terpilih sebagai Parent 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+3. Crossover (Order Crossover / OX) (prob = 0.8):
+** Elitism (Kromosom Terbaik diteruskan): [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.84
+  Tidak terjadi crossover, salin parent.
+Random value for crossover (r_cross): 0.78
+  Crosover pada titik 3 s/d 13
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.03
+  Crosover pada titik 5 s/d 6
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+4. Mutation (Inversion Mutation) (prob = 0.2):
+Kromosom baru 2: Random r_mut = 0.27
+Kromosom baru 3: Random r_mut = 0.21
+Kromosom baru 4: Random r_mut = 0.94
+
+=== ITERASI 4 ===
+1. Evaluasi Fitness:
+Kromosom 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+
+2. Rank Selection:
+Rank 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.40 | CumProb: 0.40
+Rank 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.30 | CumProb: 0.70
+Rank 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.20 | CumProb: 0.90
+Rank 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.10 | CumProb: 1.00
+Terpilih sebagai Parent 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Terpilih sebagai Parent 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+3. Crossover (Order Crossover / OX) (prob = 0.8):
+** Elitism (Kromosom Terbaik diteruskan): [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.66
+  Crosover pada titik 6 s/d 10
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.46
+  Crosover pada titik 2 s/d 4
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.25
+  Crosover pada titik 8 s/d 14
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+4. Mutation (Inversion Mutation) (prob = 0.2):
+Kromosom baru 2: Random r_mut = 0.26
+Kromosom baru 3: Random r_mut = 0.58
+Kromosom baru 4: Random r_mut = 0.90
+
+=== ITERASI 5 ===
+1. Evaluasi Fitness:
+Kromosom 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+Kromosom 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Jarak: 206.82 | Fitness: 0.004835
+
+2. Rank Selection:
+Rank 4: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.40 | CumProb: 0.40
+Rank 3: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.30 | CumProb: 0.70
+Rank 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.20 | CumProb: 0.90
+Rank 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9] | Prob: 0.10 | CumProb: 1.00
+Terpilih sebagai Parent 1: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Terpilih sebagai Parent 2: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+3. Crossover (Order Crossover / OX) (prob = 0.8):
+** Elitism (Kromosom Terbaik diteruskan): [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 1.00
+  Tidak terjadi crossover, salin parent.
+Random value for crossover (r_cross): 0.51
+  Crosover pada titik 1 s/d 12
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Random value for crossover (r_cross): 0.05
+  Crosover pada titik 1 s/d 2
+  Anak dihasilkan: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+
+4. Mutation (Inversion Mutation) (prob = 0.2):
+Kromosom baru 2: Random r_mut = 0.63
+Kromosom baru 3: Random r_mut = 0.79
+Kromosom baru 4: Random r_mut = 0.42
+
+=== KESIMPULAN ===
+Jarak terbaik ditemukan: 206.82
+Rute terbaik: [7, 8, 3, 11, 10, 14, 1, 13, 5, 6, 2, 0, 12, 4, 9]
+Kota rute: Seattle -> Redwood National Park -> Las Vegas -> Mount Hood National Forest -> Los Angeles -> New York City -> Colorado Springs -> Chicago -> Yellowstone National Park -> Mount Rushmore -> Telluride -> Denver -> Santa Fe -> Grand Canyon -> San Diego
