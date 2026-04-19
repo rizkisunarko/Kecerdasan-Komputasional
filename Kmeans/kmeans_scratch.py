@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 def euc_distance(p1, p2):
     return np.sqrt(np.sum((p1 - p2) ** 2))
 
-# 1. Load Data
+# Load Data
 df = pd.read_csv('dataset/data_kmeans.csv')
 X = df.values
 
-# 2. Inisiasi Parameter K-Means
+# Inisiasi Parameter K-Means
 K = 3
 N = X.shape[0]
 
-# Untuk memudahkan ilustrasi perhitungan manual, kita pilih 3 centroid awal dari data
-# yaitu baris ke-0, 1, dan 2
+# kita pilih 3 centroid awal dari data
+# baris ke-0, 1, dan 2
 centroids = X[:3].copy()
 labels = np.zeros(N)
 
@@ -35,8 +35,8 @@ with open("Laporan_Perhitungan_Manual.md", "w") as f:
     f.write("Kita menggunakan rumus *Euclidean Distance*:\n")
     f.write("d(A, B) = sqrt((x_a - x_b)^2 + (y_a - y_b)^2)\n\n")
     
-    # Loop Iterasi (Kita simulasikan lengkap sampai konvergen untuk aplikasi,
-    # Namun laporan manual hanya menampilkan Iterasi 1 agar tidak terlalu panjang)
+    # Loop Iterasi 
+    # laporan manual 
     max_iter = 10
     for iteration in range(max_iter):
         old_centroids = centroids.copy()
@@ -50,7 +50,7 @@ with open("Laporan_Perhitungan_Manual.md", "w") as f:
             for j in range(K):
                 distances[i, j] = euc_distance(X[i], centroids[j])
             
-            # Tentukan kluster terdekat
+            # Menentukan kluster terdekat
             labels[i] = np.argmin(distances[i])
             
             if iteration == 0:

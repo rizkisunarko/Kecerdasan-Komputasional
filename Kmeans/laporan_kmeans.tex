@@ -6,6 +6,26 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!10},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    tabsize=4,
+    captionpos=b
+}
 
 \title{\textbf{Laporan Perhitungan Manual dan Implementasi \\ K-Means Clustering}}
 \author{
@@ -126,5 +146,17 @@ Berikut adalah visualisasi hasil penentuan nilai K optimal menggunakan \textit{E
     \includegraphics[width=0.8\textwidth]{image/hasil_clustering_library.png}
     \caption{Plot Visualisasi Hasil Clustering (Menggunakan Library Scikit-Learn)}
 \end{figure}
+
+\section{Lampiran Kode Program}
+
+\subsection{Program K-Means *from Scratch* (Perhitungan Manual)}
+Program ini mensimulasikan langkah-langkah algoritma K-Means dari awal (*from scratch*) yang menjadi dasar tabel perhitungan pada iterasi pertama laporan ini.
+
+\lstinputlisting[caption={Kode sumber kmeans\_scratch.py}]{kmeans_scratch.py}
+
+\subsection{Program K-Means Menggunakan Library}
+Program ini menggunakan \textit{scikit-learn} untuk pencarian jumlah cluster terbaik (\textit{Elbow Method}) dan proses *clustering*.
+
+\lstinputlisting[caption={Kode sumber kmeans\_library.py}]{kmeans_library.py}
 
 \end{document}
