@@ -1,0 +1,220 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{listings}
+
+% Setup untuk menampilkan block code text
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    rulecolor=\color{gray!30},
+    padding=5pt
+}
+
+% Pengaturan judul
+\title{
+    \vspace{-2cm}
+    \includegraphics[width=4cm]{logo.png} \\[1cm] % Aktifkan jika ada file logo.png di folder overleaf
+    \textbf{Laporan Tugas Kelompok}\\
+    \large Jaringan Saraf Tiruan - Multi-Layer Perceptron (MLP)
+}
+
+\author{
+    \textbf{Mata Kuliah:} Kecerdasan Komputasional \\
+    \textbf{Dosen Pengampu:} Dr. ARIK KURNIAWATI S.Kom., M.T \\[1cm]
+    \textbf{Disusun Oleh Kelompok 6:} \\
+    1. Rizki Pratama Sunarko - 240411100181 \\
+    2. Ainur Suharyanto - 240411100154 \\
+    3. Wahyu Ari Ananda Fitrotul Huda - 240411100148 
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\hrule
+\vspace{0.5cm}
+
+Pada laporan tugas ini, kami menyajikan hasil penyelesaian untuk arsitektur Jaringan Saraf Tiruan (JST) dengan Multi-Layer Perceptron (1 Hidden Layer dan 1 Output Layer) menggunakan dataset riil.
+
+\section{Deskripsi Dataset dan Arsitektur Jaringan}
+
+\begin{itemize}
+    \item \textbf{Dataset:} Menggunakan dataset \textit{Iris.csv} berbentuk numerik yang diambil dari repositori Kaggle. Sesuai instruksi, kami mengambil total 50 baris data yang terdiri dari 25 baris dari kelas \textit{Iris-versicolor} (Kelas 2) dan 25 baris dari kelas \textit{Iris-virginica} (Kelas 3). Berikut adalah contoh 10 baris cuplikan data yang mewakili kedua kelas tersebut:
+    
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{c c c c l}
+            \toprule
+            \textbf{SepalLength ($X_1$)} & \textbf{SepalWidth ($X_2$)} & \textbf{PetalLength ($X_3$)} & \textbf{PetalWidth ($X_4$)} & \textbf{Species / Kelas} \\
+            \midrule
+            7.0 & 3.2 & 4.7 & 1.4 & Iris-versicolor \\
+            6.4 & 3.2 & 4.5 & 1.5 & Iris-versicolor \\
+            6.9 & 3.1 & 4.9 & 1.5 & Iris-versicolor \\
+            5.5 & 2.3 & 4.0 & 1.3 & Iris-versicolor \\
+            6.5 & 2.8 & 4.6 & 1.5 & Iris-versicolor \\
+            \midrule
+            6.3 & 3.3 & 6.0 & 2.5 & Iris-virginica \\
+            5.8 & 2.7 & 5.1 & 1.9 & Iris-virginica \\
+            7.1 & 3.0 & 5.9 & 2.1 & Iris-virginica \\
+            6.3 & 2.9 & 5.6 & 1.8 & Iris-virginica \\
+            6.5 & 3.0 & 5.8 & 2.2 & Iris-virginica \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \item \textbf{Fitur (X):} Terdapat 4 fitur yaitu $X_1$ (\textit{SepalLength}), $X_2$ (\textit{SepalWidth}), $X_3$ (\textit{PetalLength}), dan $X_4$ (\textit{PetalWidth}).
+    \item \textbf{Target (Y):} Kelas di-encode menggunakan \textit{one-hot encoding}. Kelas 2 merepresentasikan output Neuron 1 aktif \texttt{[1, 0]}, sedangkan Kelas 3 merepresentasikan output Neuron 2 aktif \texttt{[0, 1]}.
+    \item \textbf{Arsitektur JST:}
+    \begin{itemize}
+        \item \textbf{Layer Input:} 4 neuron input + 1 unit bias
+        \item \textbf{Hidden Layer:} 1 layer dengan 2 neuron + 1 unit bias
+        \item \textbf{Layer Output:} 1 layer dengan 2 neuron (untuk kelas 2 dan kelas 3)
+        \item \textbf{Fungsi Aktivasi:} \textit{Sigmoid} $f(x) = \frac{1}{1 + e^{-x}}$ diterapkan pada \textit{hidden layer} dan \textit{output layer}.
+    \end{itemize}
+\end{itemize}
+
+\section{Hasil Greedy Search (Grid Search) Parameter}
+
+Telah dilakukan pengujian algoritma secara terprogram (\textit{script Python}) terhadap kombinasi parameter \textit{Epoch} (10, 100, 500) dan \textit{Learning Rate} (0.1, 0.01, 0.001) pada keseluruhan 50 baris data latih (1 kali percobaan per kombinasi).
+
+\begin{table}[H]
+    \centering
+    \caption{Hasil Akurasi Model JST pada 50 Data}
+    \vspace{0.2cm}
+    \begin{tabular}{c c c}
+        \toprule
+        \textbf{Epochs} & \textbf{Learning Rate} ($\alpha$) & \textbf{Akurasi (\%)} \\
+        \midrule
+        10 & 0.1 & 84.00\% \\
+        10 & 0.01 & 50.00\% \\
+        10 & 0.001 & 50.00\% \\
+        100 & 0.1 & 50.00\% \\
+        100 & 0.01 & 80.00\% \\
+        100 & 0.001 & 50.00\% \\
+        500 & 0.1 & 52.00\% \\
+        \textbf{500} & \textbf{0.01} & \textbf{100.00\%} \\
+        500 & 0.001 & 78.00\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Berdasarkan hasil \textit{greedy search} di atas, model mencapai akurasi pelatihan tertinggi sebesar \textbf{100\%} pada konfigurasi \textbf{Epoch 500} dan \textbf{Learning Rate 0.01}.
+
+\newpage
+\section{Perhitungan Manual Feedforward dan Backpropagation}
+
+Berikut adalah rincian perhitungan matematika langkah demi langkah untuk 1 iterasi / baris data pertama (\textit{Iris-versicolor}) pada \textit{Epoch} pertama, dengan \textit{Learning Rate} ($\alpha) = 0.1$.
+
+\subsection{Inisialisasi}
+\begin{itemize}
+    \item \textbf{Input ($X$):} \texttt{[7.0, 3.2, 4.7, 1.4]}
+    \item \textbf{Target ($Y$):} \texttt{[1, 0]} (Kategori Iris-versicolor / Kelas 2)
+    \item \textbf{Bobot Input ke Hidden ($W_1$) \& Bias ($b_1$):}
+    \begin{lstlisting}
+W1 = [[-0.125,  0.450],
+      [ 0.231,  0.098],
+      [-0.343, -0.344],
+      [-0.441,  0.366]]
+b1 = [[ 0.101,  0.208]]
+    \end{lstlisting}
+    \item \textbf{Bobot Hidden ke Output ($W_2$) \& Bias ($b_2$):}
+    \begin{lstlisting}
+W2 = [[-0.479,  0.469],
+      [ 0.332, -0.287]]
+b2 = [[-0.318, -0.316]]
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Proses Feedforward}
+\textbf{1. Menghitung Input pada Hidden Layer ($z_1$)} \\
+Rumus: $z_1 = (X \cdot W_1) + b_1$ \\
+$z_{1,1} = (7.0 \times -0.125) + (3.2 \times 0.231) + (4.7 \times -0.343) + (1.4 \times -0.441) + 0.101 = -2.270$ \\
+$z_{1,2} = (7.0 \times 0.450) + (3.2 \times 0.098) + (4.7 \times -0.344) + (1.4 \times 0.366) + 0.208 = 2.574$
+
+\vspace{0.3cm}
+\textbf{2. Menghitung Output pada Hidden Layer ($a_1$) (Sigmoid)} \\
+Rumus: $a_1 = \frac{1}{1 + e^{-z_1}}$ \\
+$a_{1,1} = \frac{1}{1 + e^{2.270}} = 0.0936$ \\
+$a_{1,2} = \frac{1}{1 + e^{-2.574}} = 0.9292$
+
+\vspace{0.3cm}
+\textbf{3. Menghitung Input pada Output Layer ($z_2$)} \\
+Rumus: $z_2 = (a_1 \cdot W_2) + b_2$ \\
+$z_{2,1} = (0.0936 \times -0.479) + (0.9292 \times 0.332) + (-0.318) = -0.0541$ \\
+$z_{2,2} = (0.0936 \times 0.469) + (0.9292 \times -0.287) + (-0.316) = -0.5398$
+
+\vspace{0.3cm}
+\textbf{4. Menghitung Final Output ($a_2$) (Sigmoid)} \\
+Rumus: $a_2 = \frac{1}{1 + e^{-z_2}}$ \\
+$a_{2,1} = \frac{1}{1 + e^{0.0541}} = 0.4864$ \\
+$a_{2,2} = \frac{1}{1 + e^{0.5398}} = 0.3682$ \\
+\textit{Output prediksi model saat ini adalah $[0.4864, 0.3682]$, masih memiliki error terhadap target $[1, 0]$.}
+
+\newpage
+\subsection{Proses Backpropagation}
+
+\textbf{1. Menghitung Error dan Delta pada Output Layer ($\delta_2$)} \\
+$Error = Target - a_2$ \\
+$Error_1 = 1 - 0.4864 = 0.5135$ \\
+$Error_2 = 0 - 0.3682 = -0.3682$
+
+\vspace{0.2cm}
+$\delta_2 = Error \times a_2 \times (1 - a_2)$ \\
+$\delta_{2,1} = 0.5135 \times 0.4864 \times 0.5136 = 0.1282$ \\
+$\delta_{2,2} = -0.3682 \times 0.3682 \times 0.6318 = -0.0856$
+
+\vspace{0.4cm}
+\textbf{2. Menghitung Error dan Delta pada Hidden Layer ($\delta_1$)} \\
+$Error_{\text{hidden}} = \delta_2 \cdot W_2^T$ \\
+$Error_{\text{hidden},1} = (0.1282 \times -0.479) + (-0.0856 \times 0.469) = -0.1017$ \\
+$Error_{\text{hidden},2} = (0.1282 \times 0.332) + (-0.0856 \times -0.287) = 0.0672$
+
+\vspace{0.2cm}
+$\delta_1 = Error_{\text{hidden}} \times a_1 \times (1 - a_1)$ \\
+$\delta_{1,1} = -0.1017 \times 0.0936 \times 0.9064 = -0.0086$ \\
+$\delta_{1,2} = 0.0672 \times 0.9292 \times 0.0708 = 0.0044$
+
+\subsection{Pembaruan Bobot dan Bias (Update Weights)}
+Rumus pembaruan: $W_{\text{new}} = W_{\text{old}} + (Input^T \cdot \delta \times \alpha)$
+
+\vspace{0.3cm}
+\textbf{1. Update Bobot Hidden ke Output ($W_2$) \& Bias ($b_2$)} \\
+$W_{2_{\text{new}}} = W_2 + (a_1^T \cdot \delta_2 \times 0.1)$
+\begin{lstlisting}
+W2_new = [[-0.478,  0.469],
+          [ 0.344, -0.295]]
+b2_new = [[-0.305, -0.325]]
+\end{lstlisting}
+
+\vspace{0.3cm}
+\textbf{2. Update Bobot Input ke Hidden ($W_1$) \& Bias ($b_1$)} \\
+$W_{1_{\text{new}}} = W_1 + (X^T \cdot \delta_1 \times 0.1)$
+\begin{lstlisting}
+W1_new = [[-0.131,  0.453],
+          [ 0.229,  0.100],
+          [-0.348, -0.341],
+          [-0.443,  0.366]]
+b1_new = [[ 0.100,  0.208]]
+\end{lstlisting}
+
+\textit{Bobot dan bias baru inilah yang digunakan untuk baris data selanjutnya, hingga akhirnya proses selesai saat epochs / iterasi berakhir.}
+
+\end{document}
